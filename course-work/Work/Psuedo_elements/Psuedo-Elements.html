@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+		<title>Psuedo Elements</title>
+		<style type="text/css">
+		body{
+		}
+		#container {
+			margin-right: auto;
+			margin-left: auto;
+			position: relative;
+			width: 960px;
+			border-radius: 10px;
+			padding: 10px;
+			font-size: 0;
+		}
+		.box {
+			position: relative;
+			width: 100%;
+			background-color: #81BBC9;
+			margin-bottom: 10px;
+			border-radius: 10px;
+			font-size: 20px;
+			text-align: center;
+			padding: 30px 0;
+		}
+		.sidebar {
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			box-sizing: border-box;
+			display: inline-block;
+			width: 470px;
+			margin-right: 10px;
+			padding-left: 10px; 
+			padding-right: 10px;
+		}
+		.content {
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			box-sizing: border-box;
+			display: inline-block;
+			width: 470px;
+			margin-left: 10px;
+			padding-left: 10px;
+			padding-right: 10px;
+		}
+		#toTopRight {
+			position: absolute; /*Absolute Link*/
+			bottom: 0px; /*offset however we wish*/
+			right: -80px;
+		}
+		#toTopLeft {
+			position: absolute; /*Absolute Link*/
+			bottom: 0px; /*offset however we wish*/
+			left: -80px;
+		}
+		p {
+			padding-bottom: 50px;
+		}
+		/*@media screen and (max-width: 600px){ /*width for screen less than 600px
+			.box {
+				text-align: left;
+				background-color: #eee;
+				border-color: white;
+			}
+		}
+		@media screen and (min-width: 1000px){ /*width for screen over 1000px
+			.box{
+				color: white;
+				border-color: white;
+			}
+		}*/
+		p::first-line { /*targets first line of every paragraph*/
+			font-weight: bold;
+			font-size: 1.2em;
+		}
+		p::first-letter { /*targets first letter of every paragraph*/
+			font-weight: bolder;
+			font-size: 2em;
+		}
+		</style>
+</head>
+<body>
+	<div id="container">
+		<div id="Header" class="box"> <!--using the class more than once is better than duplicatiing code-->
+				<h1>Header</h1>
+		</div> 
+		<div class="box sidebar">
+				<h2>Sidebar</h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed dolor esse cumque unde, explicabo totam, in sequi iste recusandae ipsa laudantium, neque excepturi molestias modi velit animi asperiores suscipit? Voluptas.</p>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed dolor esse cumque unde, explicabo totam, in sequi iste recusandae ipsa laudantium, neque excepturi molestias modi velit animi asperiores suscipit? Voluptas.</p>
+		</div>
+		<div class="box content">
+				<h2>Content</h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed dolor esse cumque unde, explicabo totam, in sequi iste recusandae ipsa laudantium, neque excepturi molestias modi velit animi asperiores suscipit? Voluptas.</p>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed dolor esse cumque unde, explicabo totam, in sequi iste recusandae ipsa laudantium, neque excepturi molestias modi velit animi asperiores suscipit? Voluptas.</p>
+		</div>
+		<div class="box sidebar">
+				<h2>Sidebar</h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed dolor esse cumque unde, explicabo totam, in sequi iste recusandae ipsa laudantium, neque excepturi molestias modi velit animi asperiores suscipit? Voluptas.</p>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed dolor esse cumque unde, explicabo totam, in sequi iste recusandae ipsa laudantium, neque excepturi molestias modi velit animi asperiores suscipit? Voluptas.</p>
+				<a href="#" alt="Link to top"><img id="toTopLeft" src="img/arrow.png"></a>
+		</div>
+		<div class="box content">
+				<h2>Content</h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed dolor esse cumque unde, explicabo totam, in sequi iste recusandae ipsa laudantium, neque excepturi molestias modi velit animi asperiores suscipit? Voluptas.</p>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed dolor esse cumque unde, explicabo totam, in sequi iste recusandae ipsa laudantium, neque excepturi molestias modi velit animi asperiores suscipit? Voluptas.</p>
+				<a href="#" alt="Link to top"><img id="toTopRight" src="img/arrow.png"></a><!--See notes 'Hyperlinks' don't forget to add an alternative display method if the image won't display in the browser-->
+		</div>
+		<div id="Footer" class="box">
+				<h2>Footer</h2>
+		</div>
+	</div>
+</body>
+</html>
