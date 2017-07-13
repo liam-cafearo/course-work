@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+		<title>Layout Challenge</title>
+		<style type="text/css">
+		#container{
+			position: relative;/*must be set to relative to allow for absolute positioning boxes*/
+			top: 100px;
+			margin-right: auto;/*center container with margins leaft & right set to auto*/
+			margin-left: auto;
+			width: 600px;/*to center an element it must have a fixed width*/
+			height: 400px;
+			background-color: #AA4639;
+			padding: 10px;
+			border-radius: 10px;
+			font-size: 0;/*remove inline-block spacings*/
+		}
+		.box{
+			position: absolute;/*this allows to overlap the container when offset against the container*/
+			display: inline-block;
+			width: 220px;
+			height: 150px;
+			background-color: #81BBC9;
+			margin: 10px;
+			border-radius: 10px;
+			font-size: 35px;
+			text-align: center;
+		}
+		#box1{
+			top: -50px;
+			left: -100px;/*because positioning is absolute you can use the actual direction you want the box to go in*/
+		}
+		#box2{
+			top: -50px;
+			right: -100px;
+		}
+		#box3{
+			bottom: -50px;
+			left: -100px;
+		}
+		#box4{
+			bottom: -50px;
+			right: -100px;
+		}
+		</style>
+	</head>
+<body>
+	<div id="container">
+		<div id="box1" class="box"><h2>1</h2></div>
+		<div id="box2" class="box"><h2>2</h2></div>
+		<div id="box3" class="box"><h2>3</h2></div>
+		<div id="box4" class="box"><h2>4</h2></div>
+	</div>
+</body>
