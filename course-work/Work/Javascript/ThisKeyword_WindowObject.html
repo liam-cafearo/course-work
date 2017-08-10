@@ -6,18 +6,22 @@
 			firstName: "Clark",
 			secondName: "Kent",
 			title: "Superman",
-			isWearingSuit: false, /*set to false by default */
+			isWearingSuit: false,
 			suitUp: function() { 
-				if (superman.isWearingSuit) {
-					// This checks if the isWearingSuit property is true
+				if (this.isWearingSuit) { 
 					return "I'm already wearing my suit";
 				} else {
-					// If its false it changes the property to true and retuns the statement
-					superman.isWearingSuit = true
+					this.isWearingSuit = true
 					return "Looks like Metropolis is in trouble! Better suit up!";
 				}
+			},
+			getScope: function() {
+				return this;
 			}
 		};
+		
+		console.log(this);
+		console.log(superman.getScope());
 		console.log(superman.suitUp());
 		console.log(superman.isWearingSuit);
 	</script>

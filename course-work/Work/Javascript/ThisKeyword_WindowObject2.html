@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script>
+		// variables declared outside of the superman object (window scope).
+		var firstName = "Bruce";
+		var secondName = "Wayne";
+		// variables declared inside the superman object (object scope).
+		var superman = {
+			firstName: "Clark",
+			secondName: "Kent",
+			title: "Superman",
+			isWearingSuit: false,
+			suitUp: function() { 
+				if (this.isWearingSuit) { 
+					return "I'm already wearing my suit";
+				} else {
+					this.isWearingSuit = true
+					return "Looks like Metropolis is in trouble! Better suit up!";
+				}
+			},
+			// Two functions that log the fullname out of the console.
+			/* getFullNameUsingThis logs Clark Kent. This is because we’re using the this keyword to state that we wish to use the firstName and secondName that’s within the scope of this object. */
+			getFullNameUsingThis: function() {
+				return "Using this: " + firstName + " " + secondName;
+			},
+			/* getFullNameWithoutUsingThis, the JavaScript interpreter will use the firstName and secondName defined in the Window scope.*/
+			getFullNameWithoutUsingThis: function() {
+				return "Without using this: " + firstName + " " + secondName;
+			}
+		};
+
+		//Writes the above to the console.
+		console.log(superman.suitUp());
+		console.log(superman.isWearingSuit);
+		console.log(superman.getFullNameUsingThis())
+		console.log(superman.getFullNameWithoutUsingThis())
+	</script>
+</head>
+</html>
