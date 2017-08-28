@@ -78,7 +78,7 @@ div{
 
 /* adds colour red to paragraphs when called by jquery function */
 .highlight_text{
-	background-color: #EB5255;
+	color: #EB5255;
 }
 
 /* adds colour lightblue to h2 background when called by jquery function */
