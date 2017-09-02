@@ -3,7 +3,7 @@
 	flex-flow: row wrap; /* layout the boxes in rows and wrap them */
 	box-sizing: border-box;
 	margin-right: auto;
-	margin left: auto;
+	margin-left: auto;
 	max-width: 1050px;
 }
 
