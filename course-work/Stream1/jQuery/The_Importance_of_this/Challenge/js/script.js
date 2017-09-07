@@ -4,37 +4,30 @@ $(document).ready(function() {
 		 * When we click on an element that has
 		 * a 'stream-nav' class, this event will be fired.
 		 */
-		// not entirely sure what the two variables are doing
-		// i know that element id is saying the stream-nav you click on
-		// recieve the attribute id (is that correct?)
+		// This variable is receiving the ".stream-nav" id (stream1, 2, 3) 
 		var elementId = $(this).attr("id");
-		// this one i understand that its selecting the .card class and then receiving the
-		// class of .card class and then splitting it where there is a space (is that correct?)
-		// not sure what the [0] is, i know its an array reference but to what?
+		// this Variable is then selecting the card class
+		// then it is is recieving the card class' full class so "card stream1" for example
+		// then its splitting the string into card and stream1 for example
+		// then the [0] is selecting the card string
 		var cardClass = $(".card").attr("class").split(" ")[0];
-		// is this selecting the .card class, then splitting the the class so you have
-		// card[0] and stream1, 2 and 3 etc as [1]
-		// still not sure what the [0] on the end is
 
-		.// here is what i think these are saying:
+		
+		// ("." + elementId) this is selecting the element id of the stream-nav
+		// and making it into a class, for example we would have .stream1
+		// Then is is checking the background-color of the css is equal to the rgb color
 		if ($("." + elementId).css("background-color") == "rgb(235, 82, 85)") {
-			// the "." means its selecting a class correct? So is it saying
-			// the class recieved, if the background colour is red 
+		// If the background color of the selected element is equal the rgb value 
+		// the below statement changes it to white.
 			$("." + elementId).css("background-color", "#fff");
-			// make the background white?
 
-			// what i don't get is in the var its selecting it via Id (stream1) then the
-			// if statement is selecting it by class "." (stream1)
-			// so the if statement is matching an id to a class is that correct?
-
-		// this i believe is doing the reversal of the above?
 		} else {
+			// if the above if statement conditions are false then the below executes
+			// This statement sets all the divs with the card class to white
 			$("." + cardClass).css("background-color", "#fff");
-			// this is saying if the background-color is white
+			// and then this selects anything with a stream1,2 or 3 class to red when selected.
 			$("." + elementId).css("background-color", "rgb(235, 82, 85)");
-			// set it to red?
 
-			// becasue im not sure what the [0] im not sure on the else statement?
 		}
 	});
 }); 
