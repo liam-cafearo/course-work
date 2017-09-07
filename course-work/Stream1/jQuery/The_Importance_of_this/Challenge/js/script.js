@@ -15,9 +15,10 @@ $(document).ready(function() {
 		
 		// ("." + elementId) this is selecting the element id of the stream-nav
 		// and making it into a class, for example we would have .stream1
-		// Then is is checking the background-color of the css is equal to the rgb color
+		// Then is is checking the background-color of the classes == to the id selected in the nav
+		// is equal to the rgb color
 		if ($("." + elementId).css("background-color") == "rgb(235, 82, 85)") {
-		// If the background color of the selected element is equal the rgb value 
+		// If the background color of the selected id from the nav is equal the rgb value 
 		// the below statement changes it to white.
 			$("." + elementId).css("background-color", "#fff");
 
@@ -25,7 +26,7 @@ $(document).ready(function() {
 			// if the above if statement conditions are false then the below executes
 			// This statement sets all the divs with the card class to white
 			$("." + cardClass).css("background-color", "#fff");
-			// and then this selects anything with a stream1,2 or 3 class to red when selected.
+			// and then this sets anything with a stream1,2 or 3 class to red when selected.
 			$("." + elementId).css("background-color", "rgb(235, 82, 85)");
 
 		}
