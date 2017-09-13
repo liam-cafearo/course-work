@@ -1,8 +1,11 @@
-// This line of code ensures that the html page is ready before running the statements below.
+// Waits till page is ready.
 $(document).ready(function() {
-	// Here we are saying "when we click on a "p" tag"
-	$("p").click(function() {
-		// retun all the children elements (in our case the "a" tag) within the selected p tag (this) as yellow.
-		$(this).children("a").css("background-color", "yellow");
-	})
-}); 
+	$("img").click(function() {
+		// slides down paragraph directly under image when img is clicked
+		$(this).next().children("p").slideDown();
+	});
+	// Changes background-color of elements with .card class to pink and then toggles this off when clicked again.
+	$(".card").click(function() {
+		$(this).toggleClass("highlight");
+	});
+});
