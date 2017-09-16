@@ -17,7 +17,7 @@ $(document).ready(function() {
 	// all cards will selected/re-appear. #all_btn is the id we added to the HTML
 	$("#all_btn").click(function(){
 		// show all elements with a class of .card
-		// we don't use this because we are selecting a different part of CSS
+		// we don't use (this) because we are selecting a different part of CSS
 		$(".card").show();
 	});
 });
