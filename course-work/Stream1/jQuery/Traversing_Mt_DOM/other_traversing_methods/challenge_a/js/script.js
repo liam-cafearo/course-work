@@ -5,6 +5,7 @@ $(document).ready(function(){
 
     // hides all panels when a panel is clicked
     $(".theButton").click(function(){
+        // selects the id panel and the class container.
         $("#panel .container").siblings().hide();
     });
     // hides only the selected panel.
