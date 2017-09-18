@@ -28,7 +28,14 @@
 	</head>
 	<body>
 		<h1>HTML5 - Video</h1>
+		<!-- Embed your video media in your HTML document and create a player for it, The controls attribute is mandatory! -->
 		<video width="600" controls="controls" preload="auto" muted loop poster="img/bunny_poster.jpg">
+			<!-- To guarantee that your video is watchable across all devices and platforms, 
+			it must also be encoded in different formats for different browsers. 
+			Multiple source files can be specified using the <source> element 
+			The <source> element should also include a type attribute. 
+			This will allow the browser to load only the video type it can play, 
+			rather than try each video format you will have listed.-->
 			<source src="video/MP4_bunny.mp4" type="video/mp4"/>
 			<source src="video/OGV_bunny.ogv" type="video/ogv"/>
 			<source src="video/WebM_bunny.webm" type="video/webm"/>
