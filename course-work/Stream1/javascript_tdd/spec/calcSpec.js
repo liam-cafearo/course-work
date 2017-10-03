@@ -26,7 +26,7 @@
 // before we implemented the addition functionality.
 // To make sure that the function doesn’t just always return 4, 
 // let’s now add another test to check for different numbers.
-describe("Calculator", function() {
+/*describe("Calculator", function() {
     describe('Addition function', function() {
         it('should add two numbers together and return the result', function() {
             expect(addition(2, 2)).toBe(4);
@@ -36,6 +36,19 @@ describe("Calculator", function() {
             expect(addition(7, 19)).toBe(26);
         });
     });
-});
+});*/
 
 // a test suite is denoted by the describe function
+
+describe("Calculator", function() {
+
+    describe('Addition function', function() {
+        ...
+
+        it("should have called the alert function if either number is undefined", function() {
+            spyOn(window, "alert");
+            addition("Hello");
+            expect(window.alert).toHaveBeenCalledWith("Arguments must both be a number");
+        });
+    });
+});
