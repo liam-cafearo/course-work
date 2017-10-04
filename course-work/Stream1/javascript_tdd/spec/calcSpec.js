@@ -39,11 +39,11 @@
 });*/
 
 // a test suite is denoted by the describe function
+// The specs are denoted by the it function.
 
 describe("Calculator", function() {
 
     describe('Addition function', function() {
-        ...
 
         it("should have called the alert function if either number is undefined", function() {
             spyOn(window, "alert");
@@ -52,3 +52,10 @@ describe("Calculator", function() {
         });
     });
 });
+
+// Now we’re telling jasmine to spyOn the alert function. On line 50 we’re using the spyOn function, 
+// but we also need to pass in the object that the alert function belongs to. Because the alert function isn’t actually part of an object – it defaults to the window object!
+// After we pass in the name of the object, we pass in the name of the function that we wish to spy on.
+// After that we invoke the addition function with “Hello” as a parameter.
+// After that we simply expect window.alert to have been called with “Arguments must both be a number”.
+// The toHaveBeenCalledWith function requires the parameters that we will be passing to the alert function.
