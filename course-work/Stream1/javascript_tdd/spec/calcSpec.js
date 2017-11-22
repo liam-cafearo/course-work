@@ -21,6 +21,15 @@ describe("Calculator", function() {
 
 		it("should not return 4 if the parameters given don't add up to 4", function() {
 			expect(addition(7, 19)).toBe(26);
-		})
+		});
+
+		// Defensive programing
+		// add a spy and tpye of to check that the function receives a number
+
+		it("should have called the alert function if either number is undefined", function() {
+			spyOn(window, "alert");
+			addition("Hello";)
+			expect(window.alert).toHaveBeenCalledWith("Arguements most both be a number");
+		});
 	});
 });

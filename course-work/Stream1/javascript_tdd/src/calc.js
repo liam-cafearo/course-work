@@ -14,7 +14,18 @@
 // modify our addition function in the calc.js file to make it a bit 
 // more complex and actually perform the addition
 
-function addition(firstNumber, secondNumber) {
+/*function addition(firstNumber, secondNumber) {
 	var sum = firstNumber + secondNumber;
 	return sum;
+}*/
+
+// Ammend addition function for defensive programming and spyOn
+
+function addition(firstNumber, secondNumber) {
+	if (typeof(firstNumber) == "number" && typeof(secondNumber) == "number") {
+		var sum = firstNumber +secondNumber;
+		return sum;
+	} else {
+		alert("Arguements must both be a number");
+	}
 }
