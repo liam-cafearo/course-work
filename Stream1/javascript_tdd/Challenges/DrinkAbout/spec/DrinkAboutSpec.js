@@ -111,21 +111,16 @@
 
 // add other age checks
 
-describe("getSuitableDrink", function() {
-
-	var drink = new getSuitableDrink();
-	
-	describe('lessThanZero function', function() {
+describe("whatCanIDrink", function() {
+	describe('getDrink function', function() {
 		it('should check whether the age is less than or equal to zero', function() {
-			drink.zero(0)
-			expect(drink.value).toBe("Sorry. I can't tell what drink because that age is incorrect!");
+			expect(getDrink(-1)).toBe("Sorry. I can't tell what drink because that age is incorrect!");
 		});
 
 		// This is to check that if an age higher than 0 cannot be entered.
 
 		it('should not return an answer if the age given is too high', function() {
-			drink.zero(4)
-			expect(drink.value).toBe("Age to high")
+			expect(getDrink(4)).toBe("Age to high")
 		});
 
 		// Defensive Programming
@@ -133,30 +128,8 @@ describe("getSuitableDrink", function() {
 
 		it("should have called the alert function if the age is undefined", function() {
 			spyOn(window, "alert");
-			drink.zero(); // pass a parameter that the test will fail on and go to the alert.
-			expect(window.alert).toHaveBeenCalledWith("please enter your age");
-		});
-	});
-	describe('lessThanFourteen function', function() {
-		it('should check whether the age is less than or equal to fourteen', function() {
-			drink.fourteen(14)
-			expect(drink.value).toBe("Drink Toddy");
-		});
-
-		// This is to check that if an age higher than 0 cannot be entered.
-
-		it('should not return an answer if the age given is not between 0 and 14', function() {
-			drink.fourteen(16)
-			expect(drink.value).toBe("Age entered must be between 0 and 14")
-		});
-
-		// Defensive Programming
-		// add a spy to check if a function has been invoked.
-
-		it("should have called the alert function if the age is undefined", function() {
-			spyOn(window, "alert");
-			drink.fourteen(); // pass a parameter that the test will fail on and go to the alert.
-			expect(window.alert).toHaveBeenCalledWith("please enter your age");
+			getDrink("hello"); // pass a parameter that the test will fail.
+			expect(window.alert).toHaveBeenCalledWith("bad input");
 		});
 	});
 });
