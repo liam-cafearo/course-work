@@ -24,7 +24,7 @@
 
 // Ammend function for defensive programming and spyOn
 
-function whatCanIDrink(age) {
+/*function whatCanIDrink(age) {
 	if (typeof(age) == "number") {
 		if (age <= 0) {
 			return "Sorry. I can't tell what drink because that age is incorrect!";
@@ -33,5 +33,21 @@ function whatCanIDrink(age) {
 		} 
 	} else {
 		alert("please enter your age");
+	}
+}*/
+
+// Create the whatCanIDrink as an object, this means all the logic neccessary
+// for the whatCanIDrink is safely contained within one place rather
+// than creating seperate functions.
+
+function = getSuitableDrink() {
+	if (typeof(age !== "number") {
+		return "bad input";
+	} else if (age < 0) {
+		return "you haven't been born yet?!";
+	} else if (age >= 0 && age < 14) {
+		return "Drink Toddy";
+	} else if (age >= 14 && age < 18) {
+		return "Drink Coke";
 	}
 }
