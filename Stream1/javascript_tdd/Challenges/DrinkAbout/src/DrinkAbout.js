@@ -40,13 +40,13 @@
 // for the whatCanIDrink is safely contained within one place rather
 // than creating seperate functions.
 
-function = getDrink(age) {
+function getDrink(age) {
 	if (typeof(age) !== "number") {
 		return "bad input";
 	} else if (age < 0) {
 		return "Sorry. I can't tell what drink because that age is incorrect!";
 	} else if (age >= 0 && age < 14) {
 		return "Drink Toddy"
-	}
+	} 
 }
 

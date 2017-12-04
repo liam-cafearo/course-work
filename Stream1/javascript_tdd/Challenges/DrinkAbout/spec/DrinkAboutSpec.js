@@ -113,23 +113,21 @@
 
 describe("whatCanIDrink", function() {
 	describe('getDrink function', function() {
-		it('should check whether the age is less than or equal to zero', function() {
+		it('should check whether the age is less than zero', function() {
 			expect(getDrink(-1)).toBe("Sorry. I can't tell what drink because that age is incorrect!");
 		});
 
-		// This is to check that if an age higher than 0 cannot be entered.
-
-		it('should not return an answer if the age given is too high', function() {
-			expect(getDrink(4)).toBe("Age to high")
+		it('should check whether the age entered is between zero and fourteen', function() {
+			expect(getDrink(10)).toBe("Drink Toddy");
 		});
 
 		// Defensive Programming
 		// add a spy to check if a function has been invoked.
 
-		it("should have called the alert function if the age is undefined", function() {
-			spyOn(window, "alert");
-			getDrink("hello"); // pass a parameter that the test will fail.
-			expect(window.alert).toHaveBeenCalledWith("bad input");
+		it("should have called the getDrink function if the age is undefined", function() {
+			spyOn(window, "getDrink");
+			getDrink("bad input"); // pass a parameter that the test will fail.
+			expect(window.getDrink).toHaveBeenCalledWith("bad input");
 		});
 	});
 });
