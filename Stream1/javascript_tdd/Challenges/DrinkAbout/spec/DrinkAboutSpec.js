@@ -124,10 +124,10 @@ describe("whatCanIDrink", function() {
 		// Defensive Programming
 		// add a spy to check if a function has been invoked.
 
-		it("should have called the getDrink function if the age is undefined", function() {
-			spyOn(window, "getDrink");
-			getDrink("bad input"); // pass a parameter that the test will fail.
-			expect(window.getDrink).toHaveBeenCalledWith("bad input");
+		it("should have called the alert function if the age is undefined", function() {
+			spyOn(window, "typeof");
+			getDrink("hello"); // pass a parameter that the test will fail.
+			expect(window.alert).toHaveBeenCalledWith("bad input");
 		});
 	});
 });
