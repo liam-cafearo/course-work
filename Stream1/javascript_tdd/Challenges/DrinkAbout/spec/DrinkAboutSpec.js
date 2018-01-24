@@ -121,13 +121,25 @@ describe("whatCanIDrink", function() {
 			expect(getDrink(10)).toBe("Drink Toddy");
 		});
 
+		it('should check whether the age entered is between fourteen and eighteen', function() {
+			expect(getDrink(16)).toBe("Drink Coke");
+		});
+
+		it('should check whether the age entered is between eighteen and twenty one', function() {
+			expect(getDrink(20)).toBe("Drink Beer");
+		});
+
+		it('should check whether the age entered is between twenty one and one hundred and thirty', function() {
+			expect(getDrink(100)).toBe("Drink Whiskey");
+		});
+
 		// Defensive Programming
 		// add a spy to check if a function has been invoked.
 
-		it("should have called the alert function if the age is undefined", function() {
-			spyOn(window, "typeof");
+		it("should have called the return statement if the age is undefined", function() {
+			spyOn(window, "return");
 			getDrink("hello"); // pass a parameter that the test will fail.
-			expect(window.alert).toHaveBeenCalledWith("bad input");
+			expect(window.return).toHaveBeenCalledWith("Sorry. I can't tell what drink because that age is incorrect!");
 		});
 	});
 });
