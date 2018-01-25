@@ -19,5 +19,9 @@ describe("whatCanIDrink", function() {
 		it('should check whether the age entered is between twenty one and one hundred and thirty', function() {
 			expect(getDrink(100)).toBe("Drink Whiskey");
 		});
+
+		it('should return an error message if a number is not entered', function() {
+			expect(getDrink("code")).toBe("Sorry. I can't tell what drink because that age is incorrect!");
+		});
 	});
 });
