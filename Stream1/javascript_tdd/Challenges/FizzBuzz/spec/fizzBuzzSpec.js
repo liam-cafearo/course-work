@@ -13,7 +13,7 @@ describe("FizzBuzz", function() {
 		});
 
 		it('should otherwise return the number', function() {
-			expect(fizzBuzz(12)).toBe(number);
+			expect(fizzBuzz(8)).toBe(8);
 		});
 
 	});
